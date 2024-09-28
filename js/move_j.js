@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function checkScreenSize() {
         if (window.innerWidth <= 1000) {
-          window.location.href = "html/index_m.html";
+          window.location.href = "/index_m.html";
         }
       }
     
