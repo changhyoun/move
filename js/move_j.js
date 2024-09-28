@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function checkScreenSize() {
         if (window.innerWidth <= 1000) {
-          window.location.href = "/index_m.html";
+            window.location.href = "https://changhyoun.github.io/move/html/index_m.html";
         }
       }
     
