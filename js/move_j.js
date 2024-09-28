@@ -1,4 +1,17 @@
 document.addEventListener('DOMContentLoaded', function() {
+
+    function checkScreenSize() {
+        if (window.innerWidth <= 1000) {
+          window.location.href = "html/index_m.html";
+        }
+      }
+    
+      // 처음 페이지 로드할 때 크기 확인
+      checkScreenSize();
+    
+      // 윈도우 리사이즈 시 크기 확인
+      window.addEventListener('resize', checkScreenSize);
+      
     // 첫 번째 요소 카운트 애니메이션
     setTimeout(function() {
         var targetNumber1 = 50000; // 첫 번째 요소의 최종 카운트할 숫자 (50,000)
