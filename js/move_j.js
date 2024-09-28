@@ -1,10 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-
-    function checkScreenSize() {
-        if (window.innerWidth <= 1000) {
-            window.location.href = "https://changhyoun.github.io/move/html/index_m.html";
-        }
-      }
+  
     
       // 처음 페이지 로드할 때 크기 확인
       checkScreenSize();
