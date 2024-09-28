@@ -1,11 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
   
-    
-      // 처음 페이지 로드할 때 크기 확인
-      checkScreenSize();
-    
-      // 윈도우 리사이즈 시 크기 확인
-      window.addEventListener('resize', checkScreenSize);
       
     // 첫 번째 요소 카운트 애니메이션
     setTimeout(function() {
