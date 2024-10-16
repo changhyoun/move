@@ -526,7 +526,48 @@ $(document).ready(function() {
       $('#drop_menu').css('display', 'none');
       $('#nav_m #hamburger').html('<span class="material-symbols-rounded mn">menu</span>'); 
     });
+
+    document.querySelectorAll('.menu-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault(); // 기본 링크 동작을 막습니다.
+            
+            const targetId = this.getAttribute('href'); // 클릭한 링크의 href 값을 가져옴
+            const targetSection = document.querySelector(targetId); // 해당 id의 섹션을 선택
+            
+            targetSection.scrollIntoView({
+                behavior: 'smooth', // 스크롤을 부드럽게 설정
+                block: 'start' // 섹션의 시작 부분으로 스크롤
+            });
+        });
+    });
+
+    // 스크롤 이벤트에 반응하는 함수
+    window.addEventListener('scroll', function() {
+        const section2 = document.querySelector('#section2');
+        
+        const storeLinks = document.querySelectorAll('#store_warp > a');
+        
+        // section2의 위치 확인
+        const section2Top = section2.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+
+        // section2가 화면 상단을 넘어갔을 때
+        if (section2Top < windowHeight && section2Top < 0) {
+          // 각 a 요소에 대해 스타일 적용
+          storeLinks.forEach(storeLink => {
+            storeLink.style.border = '1px solid black';
+            storeLink.style.borderStyle = 'dotted';
+        });
+        } else {
+            // section2를 벗어나면 다시 보더를 제거
+            storeLinks.forEach(storeLink => {
+                storeLink.style.border = '';
+            });
+        }
+    });
   });
+
+
   
 
 
